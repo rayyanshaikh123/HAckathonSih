@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .navbar {
+        width: 95%;
+        margin: auto;
+        padding: 5.5px 0;
+        display: flex;
+        align-items: center;
+        background-color: white;
+        justify-content: space-between;
+        position: relative;
+      }
+      .navbar img {
+        width: 40px;
+        padding-bottom: 20px;
+        margin-top: 20px;
+      }
+      .navbar ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 20px;
+        position: relative;
+        font-size: 100%;
+      }
+      .navbar ul li a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        text-transform: uppercase;
+        gap: 40px;
+        padding: 0.8rem 0rem;
+        transition: 0.5s ease-in;
+        display: block;
+      }
+      .navbar ul ul {
+        position: absolute;
+        background-color: #efb495;
+        width: 100px;
+        left: 0;
+        padding-inline-start: 0px;
+        display: none;
+      }
+      .navbar ul li:hover .sub {
+        display: block;
+        z-index: 100;
+      }
+
+      .ri-menu-line {
+        display: none;
+        font-size: 1.7em;
+      }
+      .navbar ul li::after {
+        content: "";
+        height: 3px;
+        width: 0;
+        background: #9a3b3b;
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        transition: 0.5s;
+      }
+      .navbar ul li:hover::after {
+        width: 100%;
+      }
+      .sub:hover {
+        background-color: #efd595;
+      }
+      @media (max-width: 700px) {
+        .navbar ul li a {
+          display: none;
+        }
+        .navbar ul li .ri-menu-line {
+          display: block;
+        }
+        .navbar ul li:hover::after {
+          display: none;
+        }
+      }
+    </style>
+    <div class="navbar">
+      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOl9NuX_lrVJR6Fe72uIuxahxvHFxcDkD-9A&usqp=CAU" alt="Logo" class="logo" />
+      <ul class="van">
+        <li><a href="./home">Home</a></li>
+        <li><a href="./about">About</a></li>
+        <li>
+          <a href="#">Account<i class="ri-arrow-down-s-line"></i></a>
+          <ul class="sub">
+            <li><a href="./login">Login</a></li>
+            <li><a href="./register">Register</a></li>
+          </ul>
+        </li>
+        <li>
+          <button onclick="toggleMenu()" type="button"><i id="menuIcon" class="ri-menu-line"></i></button>
+        </li>
+      </ul>
+    </div>
+    <script>
+      // Get references to the icon and menu elements
+      const menuIcon = document.getElementById("menuIcon");
+      const navbar = document.querySelector(".van");
+      console.log("ALi");
+      // Add a click event listener to the icon
+      function toggleMenu() {
+        // Toggle the visibility of the menu
+        if (navbar.style.display === "block") {
+          navbar.style.display = "none";
+        } else {
+          navbar.style.display = "block";
+        }
+      }
+    </script>
+  </body>
+</html>

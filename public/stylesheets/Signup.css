@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  font-family: "Sawarabi Gothic", sans-serif;
+  font-family: "Ubuntu", sans-serif;
+}
+
+#main {
+  width: 100%;
+}
+
+#home {
+  width: 100%;
+}
+#nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 50px;
+}
+#nav img {
+  width: 40px;
+  padding-bottom: 20px;
+  mix-blend-mode: color-burn;
+  object-fit: contain;
+  margin-top: 20px;
+}
+#nav #right {
+  display: flex;
+
+  gap: 40px;
+
+  font-size: 1.4em;
+}
+
+#nav #right a {
+  text-decoration: none;
+  color: black;
+  font-weight: 100;
+}
+
+#nav i {
+  display: none;
+}
+@media (max-width: 700px) {
+  #nav a {
+    display: none;
+  }
+  #nav i {
+    display: block;
+  }
+}
+.hide {
+  display: none;
+}
+#content {
+  width: 100%;
+  height: calc(100vh - 104px);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYI6b9FLFXhmSzrEaNDRhEUAEP7Z_YptGyyQ&usqp=CAU);
+}
+#form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 75vh;
+}
+.container {
+  max-width: 700px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  margin-top: 70px;
+  border-radius: 10px;
+  box-shadow: 1px 7px 15px -7px black;
+}
+.container form .detailsh {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+form .detailsh .ipbox {
+  margin: 10px 0 10px 0;
+  width: calc(100% / 2 - 20px);
+}
+.detailsh .ipbox .details {
+  display: block;
+  font-weight: 500;
+  margin-bottom: 2px;
+}
+.detailsh .ipbox input {
+  height: 30px;
+  font-size: 1.2rem;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid rgba(110, 105, 110, 0.667);
+  padding: 4px 5px;
+}
+.detailsh .ipbox input:focus,
+.detailsh .ipbox input:valid {
+  border-color: rgb(0, 0, 0);
+}
+
+
+#dot-1:checked ~ .category .one,
+#dot-2:checked ~ .category .two,
+#dot-3:checked ~ .category .three {
+  border-color: #d9d9d9;
+  background: #000000;
+}
+
+.sign {
+  width: 100%;
+  border-radius: 20px;
+  margin-top: 10px;
+  font-size: 1.5rem;
+  font-weight: 600px;
+  padding: 5px 0;
+  color: white;
+  background-color: black;
+  transition: all 200ms;
+  transition-delay: border 1s;
+  font-family: "Open sans", sans-serif;
+}
+.sign:hover {
+  color: white;
+  transform: translatey(-0.2em);
+  box-shadow: 2px 0.5px 10px rgba(245, 245, 245, 0.552);
+}
+#icon {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+#icon a {
+  text-decoration: none;
+  font-size: 2.8rem;
+  margin-top: 10px;
+}
+#icon a:nth-child(1) {
+  color: #00acee;
+}
+#icon a:nth-child(2) {
+  color: #34a853;
+}
+#icon a:nth-child(3) {
+  color: #1877f2;
+}
+a img {
+  width: 38px;
+  font-size: 0.5rem;
+  margin-top: 10px;
+}
+form h1 {
+  padding-bottom: 20px;
+}
+form h4 {
+  margin-top: 20px;
+  color: #6e696eaa;
+}
+@media (max-width: 480px) {
+  .gogle {
+    padding: 10px 0;
+  }
+}
+@media (max-width: 584px) {
+  .container {
+    max-width: 100%;
+
+    margin-top: 70px;
+  }
+  .ri-google-fill{
+    display: none;
+  }
+  
+  form .detailsh .ipbox {
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .genderh .category {
+    width: 100%;
+  }
+  .container form .detailsh {
+    max-height: 230px;
+    overflow-y: scroll;
+  }
+  .detailsh::-webkit-scrollbar {
+    width: 0;
+  }
+}
+.gogle {
+  margin: 10px 10px;
+  background-color: white;
+  color: black;
+  padding: 10px 130px;
+  gap: 20px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.gogle:hover {
+  color: white;
+  background-color: black;
+}
+.gogle span {
+  font-size: 2vmax;
+}
+.ri-google-fill {
+  font-size: 2vmax;
+  position: absolute;
+  left: 32%;
+}
+.category{
+  padding: 5px 0;
+}
+.category label{
+ gap: 40px;
+  padding: 10px;
+  font-size: 1.3rem;
+}

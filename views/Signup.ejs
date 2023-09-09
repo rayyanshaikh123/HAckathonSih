@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway&family=Sawarabi+Gothic&family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/stylesheets/Signup.css" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <style></style>
+    <div id="main">
+      <div id="home">
+        <div id="nav">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOl9NuX_lrVJR6Fe72uIuxahxvHFxcDkD-9A&usqp=CAU"
+            alt="logo"
+          />
+          <div id="right">
+            <a href="./home">Home</a>
+            <a href="">About</a>
+            <a href="">Languages</a>
+            <a href="">Disable</a>
+            <a href="./login">Login</a>
+            <div class="hide"><a href="">Register</a></div>
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+        <div id="content">
+          <div id="form">
+            <div class="container">
+              <div class="title">
+                <center><h1>Sign Up</h1></center>
+                <br />
+              </div>
+              <form>
+                <div class="detailsh">
+                  <div class="ipbox">
+                    <span class="details">First name</span>
+                    <input type="text" id="fname" required />
+                  </div>
+                  <div class="ipbox">
+                    <span class="details">Last name</span>
+                    <input type="text" id="lname" required />
+                  </div>
+                  <div class="ipbox">
+                    <span class="details">Email</span>
+                    <input type="email" id="email" required />
+                  </div>
+                  <div class="ipbox">
+                    <span class="details">Phone No</span>
+                    <input type="tel" id="tel" required />
+                  </div>
+                  <div class="ipbox">
+                    <span class="details">Password</span>
+                    <input type="password" id="password" required />
+                  </div>
+                  <div class="ipbox">
+                    <span class="details">Confirm Password</span>
+                    <input type="password" id="cpsw" required />
+                  </div>
+                </div>
+                <div class="genderh">
+                  
+                 
+                 
+                  <span class="gender">Gender </span>
+                  <div class="category">
+                    <label for="dot-1">
+                      <input type="radio" name="Gender" id="dot-1" id="male"  value="Male"/>
+                      <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                      <input type="radio" name="Gender" id="dot-2" id="female"  value="Female"/>
+                      <span class="gender">Female</span>
+                    </label>
+                    <label for="dot-3">
+                      <input type="radio" name="Gender" id="dot-3" id="other" value="Other"/>
+                      <span class="gender">Prefer Not To Say</span>
+                    </label>
+                  </div>
+                </div>
+
+                <button type="button" class="sign" onclick="register()">Sign Up</button>
+                <center><h4>---OR---</h4></center>
+                <div id="icon">
+                  <button class="gogle">
+                    <i class="ri-google-fill"></i>
+                    <span>Continue With Google</span>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script>
+      var firebaseConfig = {
+      apiKey: "AIzaSyAIccTqte_ZIdgepA0OleZj-XkpAWcHFRo",
+      authDomain: "login-and-register-b6be2.firebaseapp.com",
+      databaseURL: "https://login-and-register-b6be2-default-rtdb.firebaseio.com",
+      projectId: "login-and-register-b6be2",
+      storageBucket: "login-and-register-b6be2.appspot.com",
+      messagingSenderId: "670642182975",
+      appId: "1:670642182975:web:aa2d67e5d9b704ed0ed18a",
+    };
+    
+    firebase.initializeApp(firebaseConfig);
+    
+    const auth = firebase.auth();
+    const database = firebase.database();
+    var feedFormDB = firebase.database().ref("feedForm");
+
+document.getElementById("feedForm").addEventListener("submit", submitForm);
+function submitForm(e) {
+e.preventDefault();
+var email = document.getElementById('email').value;
+  
+    var fname = document.getElementById('fname').value;
+    var lname = document.getElementById('lname').value;
+    var tel = document.getElementById('tel').value;
+
+saveMessages(name, email, message);
+
+document.getElementById("feedForm").reset();
+
+alert("test sent successful!");
+}
+
+const saveMessages = (fname,lname,tel, email) => {
+var newFeedForm = feedFormDB.push();
+
+newFeedForm.set({
+  email: email,
+        first_name: fname,
+        last_name: lname,
+        phone_no: tel,
+        gender: getSelectedGender(),
+        last_login : Date.now()
+});
+};
+
+const getElementVal = (id) => {
+return document.getElementById(id).value;
+};
+    
+    function register() {
+      var email = document.getElementById("email").value;
+      var password = document.getElementById("password").value;
+      var fname = document.getElementById("fname").value;
+      var lname = document.getElementById("lname").value;
+      var tel = document.getElementById("tel").value;
+    
+      var cpsw = document.getElementById("cpsw").value;
+      if (password !== cpsw) {
+        alert("Passwords do not match");
+        return;
+      }
+    
+      if (validate_email(email) == false || validate_password(password) == false) {
+        alert("Email or Password is Outta Line!!");
+        return;
+      }
+      if (validate_field(fname) == false || validate_field(tel) == false || validate_field(lname) == false) {
+        alert("One or More Extra Fields is Outta Line!!");
+        return;
+      }
+    
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .then(function () {
+          var user = auth.currentUser;
+    
+          var database_ref = database.ref();
+    
+          var user_data = {
+            email: email,
+            first_name: fname,
+            last_name: lname,
+            phone_no: tel,
+            gender: getSelectedGender(),
+    
+            last_login: Date.now(),
+          };
+    
+         // database_ref.child("users/" + user.uid).set(user_data);
+         var userRef = database_ref.child('user').push();
+              userRef.set(user_data);
+          alert("Register succesfull");
+          window.location.assign("home.");
+        })
+        .catch(function (error) {
+          var error_code = error.code;
+          var error_message = error.message;
+    
+          alert(error_message);
+        });
+    }
+    
+    function login() {
+      email = document.getElementById("email").value;
+      password = document.getElementById("password").value;
+    
+      if (validate_email(email) == false || validate_password(password) == false) {
+        alert("Email or Password is Outta Line!!");
+        return;
+      }
+    
+      auth
+        .signInWithEmailAndPassword(email, password)
+        .then(function () {
+          var user = auth.currentUser;
+    
+          var database_ref = database.ref();
+    
+          var user_data = {
+            last_login: Date.now(),
+          };
+    
+          database_ref.child("users/" + user.uid).update(user_data);
+    
+          window.location.assign("home");
+          alert("User Logged In!!");
+        })
+        .catch(function (error) {
+          var error_code = error.code;
+          var error_message = error.message;
+    
+          alert(error_message);
+        });
+    }
+    
+    function validate_email(email) {
+      expression = /^[^@]+@\w+(\.\w+)+\w$/;
+      if (expression.test(email) == true) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+    
+    function validate_password(password) {
+      if (password < 6) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    
+    function validate_field(field) {
+      if (field == null) {
+        return false;
+      }
+    
+      if (field.length <= 0) {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    function getSelectedGender() {
+      var radios = document.getElementsByName("Gender");
+      for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+          return radios[i].nextElementSibling.textContent.trim();
+        }
+      }
+      return "Not specified";
+    }
+    function forgotPass() {
+      const email = document.getElementById("email").value;
+      firebase
+        .auth()
+        .sendPasswordResetEmail(email)
+        .then(() => {
+          alert("Reset link sent to your email id");
+        })
+        .catch((error) => {
+          document.getElementById("error").innerHTML = error.message;
+        });
+    }
+    function out() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          alert("logged out");
+          window.location.assign("index.html");
+        })
+        .catch((error) => {
+          alert("sorry currently our server is in maintaince");
+          window.location.assign("home.html");
+        });
+    }
+    function toggleProfile() {
+      var profileContainer = document.getElementById("profileContainer");
+      var hideButton = document.getElementById("hideButton");
+      if (profileContainer.style.display === "block") {
+        profileContainer.style.display = "none";
+        hideButton.style.display = "none";
+      } else {
+        profileContainer.style.display = "block";
+        hideButton.style.display = "block";
+        fetchUserData();
+      }
+    }
+    
+    function fetchUserData() {
+      var user = auth.currentUser;
+      if (user) {
+        var userId = user.uid;
+        var userRef = database.ref("users/" + userId);
+    
+        userRef.once("value").then(function (snapshot) {
+          var userData = snapshot.val();
+          if (userData) {
+            document.getElementById("userEmail").textContent = userData.email;
+            document.getElementById("userName").textContent = userData.first_name + " " + userData.last_name;
+            document.getElementById("userPhone").textContent = userData.phone_no;
+          }else{
+            alert("not found")
+          }
+        });
+      }
+    }
+    
+    fetchUserData();
+    </script>
+   
+  </body>
+</html>
