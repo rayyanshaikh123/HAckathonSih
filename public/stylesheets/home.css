@@ -13,33 +13,39 @@
 
 #home {
   width: 100%;
-  background-image: url("data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBw0NBwcHDQ0HDQcHBw0HBwcNBw8NDQcNFREXFiARFRMYHSggJCYlGx8VITEtMSk0LjouFyQzOD8vNyk5NiwBCgoKDQ0NDg0NDzcZFRktKysrLSstKzc3KysrKysrKy0tLSstKzcrKysrKysrKysrNysrKysrKysrKysrKysrK//AABEIAKgBLAMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAACAQADBQf/xAAcEAEBAAIDAQEAAAAAAAAAAAAAEQEhMVHhIgL/xAAXAQEBAQEAAAAAAAAAAAAAAAABAAQF/8QAFREBAQAAAAAAAAAAAAAAAAAAABH/2gAMAwEAAhEDEQA/APokaFGjhR2KESHEghoRocSIhEhxIFRiQ4kUNCJDjQGucaHEiNCJHSJBDQiQ4kUNCJHSJBDQiQ4kEVCNDiRQhEhxIDQjQ4kSoJDjQQ0IhxIjRZY0BRmZJmZkntxIcaNbBXOJHSJAqESHEihoRocSCGhEhxooaESHEgIRocSBUIkOJFDQjQ4kBoRIcaI1zjQ4kRoRIcSCKhGhxIIaESOkSCGhEhxIoQjQo0BoRIcSJUIkdIkBoRDiRGvdjQ4kbHOoRIcSKGjEhxIIaESHGghrnGhxIlQiQ40ENCJDiQQ0I0OJFDQiQ40Bc40OJEqESHGgNCJDiRQ0IkdIkBoRIcSJUI0OJBDQiQ4kENCNDiRQ0IkOJBCMSHEgVe7Ehxo2ufQiQ4kENCJDjRKhEhxIDQjQo0RoRIcSCGjEhxIIqESHGiNc40OJAaESHGihoRIcSCGhEhxoIqESHEiIRocSA0IkOJFDQjQ4kCoRIcaI0IkOJBDQjQo0UNe7EhxI2RzqEaFGghoRIcSA0I0OIjQiQ40EVCJDiRGhEhxoDQiQ4kRoRoUaCKhEhxIoaESOkSCGhEhxIDQjQ4kUNCJDiQQ0YkOJBEESHGiIRIcSA0I0OJFFQiQ4kBr3Y0KNG2OfQiQ4kEVCNDiQQ0IkOJFDRiQ4kENCJDjRQ0IkOJAqESOkSA0IkOJFDQiR0iQGhEhxIjQjQ4kEVCJDjRQ0IkOJAaESOkSA0IkOJFFQjQo0ENCJDiQQ0I0OJEXuxIcSNjnUI0OJEaESHGghoRIcSKEIkONBFQiQ4kENBocSKGhEhxIIaEaHEiVCJDjQGucaHEgNCJDjRQ1zjQ4kBoRI6RIlQiQ4kUNCNDiQQ0IkONBDXONDiQKhEhxIoa92NDiRsjn0IkOJFDRiQ4kCoRoUaI0IkOJAaEaHEihoRIcSCKjEhxIDQiQ40UNc40OJBDQiQ40ENCIcSKKhGhRoDQiQ4kRoRocSCGhEhxIjQjQ4kCoRIcSKGjEhxIIa92JDjRsc6hEhxIoaESOkSA0IkONBDXONDiRRUIkOJAaEaHEiNCJDjQGhEhxIoaESHGgioRIcSA0IkdIkUNCIcaCGucaHEgioRIcaKGhEhxIDQiQ40RoRIcSCGhEhxolXuNGZrc9IkJkaMSHEiVCNDiQEIkOJFDRiQ4kEVCJDjQQ0IkOJFDQiQ40ENCJDiRGhEjpEgNCJDjRRVzjQ4kENCJDjQGhEhxIoaESOkSCKhEhxIoaESHGghoRIcSA17DMzUwszMkzMyTNGZJI0ZkUiRWRSJGYJI0RgWiRmRSJGYJokVkaMaMwKJGZFokZgUiRmRaJGYJIP7up3vVZgUzbxidj9deMyTb68XGMzfLMC/9k=");
+  background-image: url("https://digitalsynopsis.com/wp-content/uploads/2017/07/beautiful-color-ui-gradients-backgrounds-tranquil.png");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
-.dark-mode{
+*::selection {
+  color: white;
+  background-color: #000000;
+}
+.dark-mode {
   .navbar {
     background-color: #000000;
     color: white;
   }
-  .navbar ul li a{
+  .navbar ul li a {
     color: white;
   }
-  .content{
+  .content {
     background-color: #000000;
     color: white;
   }
-  .pic{
+  .pic {
     background-color: #000000;
-    color: white; 
+    color: white;
   }
-  .department{
+  .department {
     background-color: #000000;
     color: white;
   }
   background-color: black;
 }
+
 .hide {
   display: none;
 }
@@ -150,7 +156,7 @@
   display: block;
   z-index: 100;
 }
-.navbar button{
+.navbar button {
   border: none;
   background-color: #efb495;
   font-size: 18px;
@@ -187,7 +193,11 @@
     display: none;
   }
 }
-
+@media (max-width: 480px) {
+  .department h1 {
+    font-size: 1px;
+  }
+}
 .head {
   display: flex;
   justify-content: space-around;
@@ -236,7 +246,22 @@
     margin-top: 30px;
   }
 }
-
+@media (max-width: 1075px) {
+  .department {
+    min-height: 150vh;
+  }
+  .department .img {
+    height: 100vh;
+  }
+}
+@media (max-width: 720px) {
+  .department {
+    min-height: 180vh;
+  }
+  .department .img {
+    height: 150vh;
+  }
+}
 @media (max-width: 700px) {
   .head {
     flex-direction: column-reverse;
@@ -325,7 +350,7 @@
 .department h1 {
   margin-top: 10vmax;
   margin-left: 7.5vmax;
-  font-size: 4em;
+  font-size: 2em;
 }
 .img {
   display: flex;
@@ -337,6 +362,7 @@
 .img img {
   width: 350px;
   height: 300px;
+  box-shadow: 1px 7px 15px -7px black;
 }
 .line {
   width: 85%;
@@ -346,25 +372,41 @@
   margin-left: 7.5%;
   margin-bottom: 7%;
 }
-.footer
-{
-    width: 100%;
-    height: 50vh;
-    background-color: #000000;
+.footer {
+  width: 100%;
+  height: 50vh;
+  background-color: #000000;
 }
-.anc{
-    display: flex;
-align-items: center;
+.anc {
+  display: flex;
+  align-items: center;
 
-justify-content: space-evenly;
+  justify-content: space-evenly;
 }
-.anc a{
-    margin-top: 2%;
-    text-decoration: none;
-    color: white;
-    font-size: 1.4rem;
-    
+.anc a {
+  margin-top: 2%;
+  text-decoration: none;
+  color: white;
+  font-size: 1.4rem;
 }
 .logo img {
-margin-top: 4%;
+  margin-top: 4%;
+}
+figure {
+  box-shadow: 1px 7px 15px -7px black;
+  padding: 4px;
+  margin: auto;
+}
+
+figcaption {
+  background-color: black;
+  color: white;
+  font-style: italic;
+  padding: 2px;
+  text-align: center;
+}
+
+figcaption a {
+  text-decoration: none;
+  color: #ffffff;
 }
